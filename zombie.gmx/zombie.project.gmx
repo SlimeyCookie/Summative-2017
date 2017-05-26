@@ -21,17 +21,10 @@
     <sprite>sprites\sprite8</sprite>
     <sprite>sprites\sprite9</sprite>
     <sprite>sprites\sprite12</sprite>
-    <sprite>sprites\spr_lighting</sprite>
     <sprite>sprites\bgstick</sprite>
     <sprite>sprites\sBlood</sprite>
-    <sprite>sprites\hpbar</sprite>
-    <sprite>sprites\hpborder</sprite>
-    <sprite>sprites\idlefeet</sprite>
-    <sprite>sprites\runfeet</sprite>
-    <sprite>sprites\walkfeet</sprite>
   </sprites>
   <backgrounds name="background">
-    <background>background\background0</background>
     <background>background\background2</background>
     <background>background\background3</background>
   </backgrounds>
@@ -78,7 +71,6 @@
     </objects>
     <object>objects\obj_next</object>
     <object>objects\obj_display_manager</object>
-    <object>objects\lighting</object>
     <object>objects\oControllerBlood</object>
     <object>objects\oBlood</object>
     <object>objects\playerfeet</object>
