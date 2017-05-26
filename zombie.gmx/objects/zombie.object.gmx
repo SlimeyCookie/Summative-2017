@@ -99,11 +99,13 @@
           <argument>
             <kind>1</kind>
             <string>image_angle=point_direction(x,y,player.x,player.y);
-if (!place_meeting(x+hspeed-1, y+vspeed-1, zombie))
-    move_towards_point(player.x,player.y,zspeed);
-else {
+move_towards_point(player.x,player.y,zspeed);
+if (place_free(x+hspeed, y+vspeed)) {
+    speed = zspeed;
+} else {
     speed = 0;
 }
+
 
 </string>
           </argument>
@@ -227,6 +229,69 @@ instance_create(random(room_width),random(room_height),zombie);
         <isnot>0</isnot>
       </action>
     </event>
+    <event eventtype="4" ename="zombie">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/*d = 0;
+best = 1000;
+while (d &lt; 360) {
+    if place_free(lengthdir_x(2, d), lengthdir_y(2, d)) {
+        if abs(angle_difference(d, direction)) &lt; best {
+            best = d;
+            show_debug_message(best);
+        } 
+        
+        break;
+    }
+    d++;
+}
+if best = 1000 {
+    zspeed = 0;
+    speed = 0;
+    alarm[0] = 10;
+} else {
+    x += lengthdir_x(2, d);
+    y += lengthdir_y(2, d);
+}
+*/
+
+var dir;
+var move_dis = 1;  // change this value to your liking
+
+// If the two instances are in the same location, choose a random direction
+if (x == other.x &amp;&amp; y == other.y)
+    dir = random(360);
+
+// Otherwise, choose the direction opposite of the other instance
+else
+    dir = point_direction(other.x,other.y, x, y);
+
+// nudge instance to new location if possible
+
+var dx = lengthdir_x(move_dis,dir);
+var dy = lengthdir_y(move_dis,dir);
+
+x += dx;
+y += dy;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="player">
       <action>
         <libid>1</libid>
@@ -248,6 +313,25 @@ instance_create(random(room_width),random(room_height),zombie);
 x = x-hspeed*room_speed*0.25;
 zspeed=0;
 alarm[0] = room_speed*1;
+
+var dir;
+var move_dis = 1;  // change this value to your liking
+
+
+if (x == other.x &amp;&amp; y == other.y)
+    dir = random(360);
+
+// Otherwise, choose the direction opposite of the other instance
+else
+    dir = point_direction(other.x,other.y, x, y);
+
+// nudge instance to new location if possible
+
+var dx = lengthdir_x(move_dis,dir);
+var dy = lengthdir_y(move_dis,dir);
+
+x += dx;
+y += dy;
 </string>
           </argument>
         </arguments>
