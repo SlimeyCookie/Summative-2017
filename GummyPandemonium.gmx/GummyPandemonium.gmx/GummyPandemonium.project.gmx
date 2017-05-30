@@ -23,6 +23,7 @@
     <sprite>sprites\sprite12</sprite>
     <sprite>sprites\bgstick</sprite>
     <sprite>sprites\sBlood</sprite>
+    <sprite>sprites\spr_healthBar</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background2</background>
@@ -74,10 +75,11 @@
     <object>objects\oControllerBlood</object>
     <object>objects\oBlood</object>
     <object>objects\playerfeet</object>
+    <object>objects\obj_healthBar</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\_display_init</room>
-    <room>rooms\room0</room>
+    <room>rooms\rm_map</room>
     <room>rooms\room3</room>
     <room>rooms\room1</room>
   </rooms>
