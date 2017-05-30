@@ -444,8 +444,12 @@ if (y &lt; 0){
             <kind>1</kind>
             <string>vstick_draw(1);
 vstick_draw(2);
-//draw_sprite(hpbar,hp,display_get_gui_width()/2-sprite_get_width(hpbar)/2,display_get_gui_height()-ssize/2-sprite_get_height(hpbar)+50);
+draw_set_colour(c_red);
+ry = display_get_gui_height()-sprite_get_height(spr_healthBar);
+rx = display_get_gui_width()/2-sprite_get_width(spr_healthBar)/2;
+draw_rectangle(rx, ry, rx + sprite_get_width(spr_healthBar), ry + sprite_get_height(spr_healthBar),false);
 //draw_sprite(hpborder,0,display_get_gui_width()/2-sprite_get_width(hpbar)/2,display_get_gui_height()-ssize/2-sprite_get_height(hpbar)+50);
+draw_sprite(spr_healthBar,0,rx,ry);
 
 </string>
           </argument>
