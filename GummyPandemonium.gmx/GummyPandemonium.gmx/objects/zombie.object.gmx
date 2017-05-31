@@ -335,6 +335,9 @@ x += dx;
 y += dy;
 
 player.hp -= dmg;
+if (player.hp &lt; 0){
+    game_end();
+}
 </string>
           </argument>
         </arguments>
