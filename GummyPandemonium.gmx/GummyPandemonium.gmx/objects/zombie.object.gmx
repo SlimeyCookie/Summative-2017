@@ -77,7 +77,31 @@
           </argument>
           <argument>
             <kind>0</kind>
-            <string>25</string>
+            <string>60</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>611</id>
+        <kind>6</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>canAttack</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>true</string>
           </argument>
         </arguments>
       </action>
@@ -100,6 +124,7 @@
           <argument>
             <kind>1</kind>
             <string>zspeed = 2;
+canAttack = true;
 </string>
           </argument>
         </arguments>
@@ -333,8 +358,14 @@ var dy = lengthdir_y(move_dis,dir);
 
 x += dx;
 y += dy;
+if (canAttack) {
+    player.hp -= dmg;
+    canAttack = false;
+    player.outOfCombat = false;
+    player.alarm[1] = 120;
+    
+}
 
-player.hp -= dmg;
 if (player.hp &lt; 0){
     game_end();
 }

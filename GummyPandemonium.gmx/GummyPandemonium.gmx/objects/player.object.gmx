@@ -236,6 +236,54 @@ Angle = point_direction(0, 0, dx, dy);
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>611</id>
+        <kind>6</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>outOfCombat</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>true</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///outofcombat 
+outOfCombat = true;
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="3" enumb="2">
       <action>
@@ -405,7 +453,8 @@ if (vstick_get_xaxis(2) == 0 &amp;&amp; vstick_get_yaxis(2) == 0) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (x &gt; room_width){
+            <string>///Check out of bounds and regen
+if (x &gt; room_width){
     x = room_width;
 }
 
@@ -419,6 +468,11 @@ if (y &gt; room_height){
 
 if (y &lt; 0){
     y = 0;
+}
+
+//hp regen
+if (player.hp != 460 and outOfCombat){
+    player.hp += 0.3;
 }
 </string>
           </argument>
@@ -451,10 +505,7 @@ draw_rectangle(rx, ry, rx + hp, ry + sprite_get_height(spr_healthBar),false);
 //draw_sprite(hpborder,0,display_get_gui_width()/2-sprite_get_width(hpbar)/2,display_get_gui_height()-ssize/2-sprite_get_height(hpbar)+50);
 draw_sprite(spr_healthBar,0,rx,ry);
 
-//hp regen
-if (player.hp != 460){
-    player.hp ++;
-}
+
 
 </string>
           </argument>
