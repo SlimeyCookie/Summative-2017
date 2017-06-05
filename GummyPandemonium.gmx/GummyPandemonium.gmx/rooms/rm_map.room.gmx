@@ -57,6 +57,14 @@
     <instance objName="zombie" x="1248" y="2176" name="inst_99593C3C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="zombie" x="2464" y="2368" name="inst_3211FC04" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="zombie" x="1440" y="1280" name="inst_D9F46C1D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="zombie_necro" x="192" y="192" name="inst_0708ED91" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="zombie_necro" x="544" y="192" name="inst_9E6163C4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="zombie_necro" x="352" y="448" name="inst_A7B95E10" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="zombie_necro" x="1632" y="2624" name="inst_06733BEF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="zombie_necro" x="2240" y="960" name="inst_0315C251" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="zombie_necro" x="1024" y="992" name="inst_A3972FBE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="zombie_necro" x="1504" y="1024" name="inst_24C3F51B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="zombie_necro" x="992" y="1184" name="inst_FF341C4E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
