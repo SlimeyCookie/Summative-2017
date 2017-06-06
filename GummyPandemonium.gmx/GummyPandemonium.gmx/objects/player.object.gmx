@@ -454,20 +454,20 @@ if (vstick_get_xaxis(2) == 0 &amp;&amp; vstick_get_yaxis(2) == 0) {
           <argument>
             <kind>1</kind>
             <string>///Check out of bounds and regen
-if (x &gt; room_width){
-    x = room_width;
+if (x &gt; room_width - 50){
+    x = room_width - 50;
 }
 
-if (x &lt; 0){
-    x = 0;
+if (x &lt; 50){
+    x = 50;
 }
 
-if (y &gt; room_height){
-    y = room_height;
+if (y &gt; room_height - 50){
+    y = room_height - 50;
 }
 
-if (y &lt; 0){
-    y = 0;
+if (y &lt; 50){
+    y = 50;
 }
 
 //hp regen
