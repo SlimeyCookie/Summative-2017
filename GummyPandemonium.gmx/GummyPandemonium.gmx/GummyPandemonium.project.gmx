@@ -24,6 +24,7 @@
     <sprite>sprites\bgstick</sprite>
     <sprite>sprites\sBlood</sprite>
     <sprite>sprites\spr_healthBar</sprite>
+    <sprite>sprites\spr_necro</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background2</background>
@@ -77,6 +78,7 @@
     <object>objects\oBlood</object>
     <object>objects\playerfeet</object>
     <object>objects\obj_healthBar</object>
+    <object>objects\zombie_necro</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\_display_init</room>
