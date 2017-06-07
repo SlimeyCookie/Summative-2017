@@ -25,6 +25,7 @@
     <sprite>sprites\sBlood</sprite>
     <sprite>sprites\spr_healthBar</sprite>
     <sprite>sprites\spr_necro</sprite>
+    <sprite>sprites\spr_test</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background2</background>
