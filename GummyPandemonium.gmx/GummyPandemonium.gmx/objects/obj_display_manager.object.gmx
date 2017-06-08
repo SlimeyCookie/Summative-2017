@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>//display properties
-global.ideal_width=256;
+global.ideal_width=240;
 global.ideal_height=0;
 
 aspect_ratio=display_get_width()/display_get_height();
