@@ -29,7 +29,7 @@
           </argument>
           <argument>
             <kind>0</kind>
-            <string>5</string>
+            <string>8</string>
           </argument>
         </arguments>
       </action>
@@ -50,8 +50,8 @@
           <argument>
             <kind>1</kind>
             <string>///vstick init
-ssize = 30;
-margin = 6;
+ssize = sprite_get_width(bgstick)/2;
+margin = 8;
 
 vstick_init(1,display_get_gui_width()-ssize-margin,display_get_gui_height()-ssize-margin,ssize,false,noone,noone);
 vstick_set_backsprite(1,bgstick);
@@ -476,20 +476,22 @@ if (vstick_get_xaxis(2) == 0 &amp;&amp; vstick_get_yaxis(2) == 0) {
           <argument>
             <kind>1</kind>
             <string>///Check out of bounds and regen
-if (x &gt; room_width - 8){
-    x = room_width - 8;
+topsize = 200;
+size = 60;
+if (x &gt; room_width - size){
+    x = room_width - size;
 }
 
-if (x &lt; 8){
-    x = 8;
+if (x &lt; size){
+    x = size;
 }
 
-if (y &gt; room_height - 8){
-    y = room_height - 8;
+if (y &gt; room_height - size){
+    y = room_height - size;
 }
 
-if (y &lt; 8){
-    y = 8;
+if (y &lt; topsize){
+    y = topsize;
 }
 
 //hp regen
