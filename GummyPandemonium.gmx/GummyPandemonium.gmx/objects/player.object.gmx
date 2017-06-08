@@ -395,8 +395,8 @@ if (shoot == true) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = round(x);
-y = round(y);
+            <string>//x = round(x*16)/16;
+//y = round(y*16)/16;
 </string>
           </argument>
         </arguments>
