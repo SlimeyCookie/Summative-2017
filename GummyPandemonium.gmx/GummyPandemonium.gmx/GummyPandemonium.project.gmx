@@ -64,6 +64,7 @@
   </fonts>
   <objects name="objects">
     <object>objects\player</object>
+    <object>objects\zombie_necro</object>
     <object>objects\zombie</object>
     <objects name="Bullets">
       <object>objects\b_pistol</object>
