@@ -108,7 +108,7 @@ if (movSpd &gt; 0)
     image_alpha -= random_range(0.05, 0.1);
 
 // Slow down the blood with friction
-movSpd = movSpd -fric;
+movSpd = movSpd*0.9-0.001;
 
 // I decided to draw the blood to the surface here
 // This isn't really necessary, you could put this somewhere else
@@ -123,28 +123,6 @@ if (instance_exists(oControllerBlood)) {
 if (image_xscale &lt;= 0)
     instance_destroy();
 </string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string></string>
           </argument>
         </arguments>
       </action>

@@ -476,7 +476,8 @@ if (vstick_get_xaxis(2) == 0 &amp;&amp; vstick_get_yaxis(2) == 0) {
           <argument>
             <kind>1</kind>
             <string>///Check out of bounds and regen
-topsize = 200;
+topsize = 120;
+psize = sprite_get_width(spr_player)
 size = 60;
 if (x &gt; room_width - size){
     x = room_width - size;
@@ -490,14 +491,17 @@ if (y &gt; room_height - size){
     y = room_height - size;
 }
 
-if (y &lt; topsize){
-    y = topsize;
+if (y - psize &lt; topsize){
+    y = topsize + psize;
 }
 
 //hp regen
 /*if (player.hp != 460 and outOfCombat){
     player.hp += 0.3;
 }*/
+if (player.hp &lt; 0) {
+    game_restart();
+}
 </string>
           </argument>
         </arguments>

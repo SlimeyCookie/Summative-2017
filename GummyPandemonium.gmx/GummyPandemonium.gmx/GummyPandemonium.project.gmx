@@ -27,6 +27,7 @@
     <sprite>sprites\spr_healthBar</sprite>
     <sprite>sprites\spr_necro</sprite>
     <sprite>sprites\spr_test</sprite>
+    <sprite>sprites\spr_dog</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background2</background>
@@ -66,6 +67,7 @@
   <objects name="objects">
     <object>objects\player</object>
     <object>objects\zombie_necro</object>
+    <object>objects\enemy_dog</object>
     <object>objects\zombie</object>
     <objects name="Bullets">
       <object>objects\b_pistol</object>

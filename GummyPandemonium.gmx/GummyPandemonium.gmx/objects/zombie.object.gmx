@@ -105,6 +105,90 @@
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>611</id>
+        <kind>6</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>canmove</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>true</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>611</id>
+        <kind>6</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>canmove</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>true</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>// Amount of blood
+var count = random_range(4, 32);
+
+// Left-mouse click
+
+for (var i = 0; i &lt; count; i++) {
+    // Spawn blood within an 8x8 square around the mouse cursor
+    instance_create(x + random_range(-8, 8), y + random_range(-8, 8), oBlood);
+}
+
+// Screenshake
+oControllerBlood.alarm[0] = 4;
+oControllerBlood.shake = true;
+
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="2" enumb="0">
       <action>
@@ -130,30 +214,6 @@ canAttack = true;
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="2">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>x = round(x);
-y = round(y);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -171,14 +231,15 @@ y = round(y);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_angle=point_direction(x,y,player.x,player.y);
-move_towards_point(player.x,player.y,zspeed);
-if (place_free(x+hspeed, y+vspeed)) {
-    speed = zspeed;
-} else {
-    speed = 0;
+            <string>if (canmove) {
+    image_angle=point_direction(x,y,player.x,player.y);
+    move_towards_point(player.x,player.y,zspeed);
+    if (place_free(x+hspeed, y+vspeed)) {
+        speed = zspeed;
+    } else {
+        speed = 0;
+    }
 }
-
 
 </string>
           </argument>
