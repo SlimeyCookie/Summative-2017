@@ -27,92 +27,7 @@
             <kind>1</kind>
             <string>/// CREATE EVENT ///
 shake = false;
-// Create the surface, preferably as large as the room
-surf = surface_create(room_width, room_height);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="1" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// DESTROY EVENT ///
-
-// Remember to clean up the memory used for your surface
-surface_free(surf);
-
-/*
-Note:
-
-It may actually be necessary to copy this into a ROOM END EVENT, as well.
-I don't believe this is called if a room ends prior to the object being destroyed.
-*/
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>shake = false;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if (shake) {
-    // Step event
-    
-    view_xview[0] = player.x - 15 + random(40);
-    view_yview[0] = player.y - 15 + random(40);
-}
+first = true;
 </string>
           </argument>
         </arguments>
@@ -162,7 +77,7 @@ I don't believe this is called if a room ends prior to the object being destroye
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>self</whoName>
+        <whoName>other</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
@@ -171,11 +86,17 @@ I don't believe this is called if a room ends prior to the object being destroye
             <string>/// DRAW EVENT ///
 
 // Draw blood surface
-if (surface_exists(surf))
+if (!first and surface_exists(surf)) {
     draw_surface(surf, 0, 0);
+    }
 // Create new surface if DX destroys old surface due to port resize
-else
+else {
     surf = surface_create(room_width, room_height);
+    surface_set_target(surf);
+    draw_clear_alpha(0, 0);
+    surface_reset_target();
+    first = false;
+}
 </string>
           </argument>
         </arguments>

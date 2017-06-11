@@ -23,11 +23,11 @@
     <sprite>sprites\sprite9</sprite>
     <sprite>sprites\sprite12</sprite>
     <sprite>sprites\bgstick</sprite>
-    <sprite>sprites\sBlood</sprite>
     <sprite>sprites\spr_healthBar</sprite>
     <sprite>sprites\spr_necro</sprite>
     <sprite>sprites\spr_test</sprite>
     <sprite>sprites\spr_dog</sprite>
+    <sprite>sprites\spr_blood</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background2</background>
@@ -83,6 +83,8 @@
     <object>objects\oBlood</object>
     <object>objects\playerfeet</object>
     <object>objects\obj_healthBar</object>
+    <object>objects\obj_view_follow</object>
+    <object>objects\obj_zombie_controller</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\_display_init</room>

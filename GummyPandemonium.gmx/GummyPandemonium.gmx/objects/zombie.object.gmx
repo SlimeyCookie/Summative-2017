@@ -3,7 +3,7 @@
   <spriteName>spr_test</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-2</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -153,6 +153,28 @@
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///yellow
+color = make_color_rgb(255,255,0); //yellow
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="1" enumb="0">
       <action>
@@ -178,12 +200,13 @@ var count = random_range(4, 32);
 
 for (var i = 0; i &lt; count; i++) {
     // Spawn blood within an 8x8 square around the mouse cursor
-    instance_create(x + random_range(-8, 8), y + random_range(-8, 8), oBlood);
+    inst = instance_create(x + random_range(-8, 8), y + random_range(-8, 8), oBlood);
+    inst.col = color;
 }
 
 // Screenshake
-oControllerBlood.alarm[0] = 4;
-oControllerBlood.shake = true;
+obj_view_follow.alarm[0] = 4;
+obj_view_follow.shake = true;
 
 </string>
           </argument>
@@ -361,30 +384,6 @@ canAttack = true;
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if !instance_exists (zombie){
-    game_end();
-}
-    
-</string>
-          </argument>
-        </arguments>
       </action>
     </event>
     <event eventtype="4" ename="zombie">
