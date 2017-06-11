@@ -193,17 +193,16 @@ color = make_color_rgb(255,255,0); //yellow
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// Amount of blood
-var count = random_range(4, 32);
-
+            <string>
 // Left-mouse click
-
-for (var i = 0; i &lt; count; i++) {
-    // Spawn blood within an 8x8 square around the mouse cursor
-    inst = instance_create(x + random_range(-8, 8), y + random_range(-8, 8), oBlood);
+// Spawn blood 
+nblood = irandom(1) + 1;
+for (i = 0; i &lt; nblood; i++) {
+    inst = instance_create(x, y , oBlood);
     inst.col = color;
+    inst.movDir = irandom(360);
+    inst.movSpd = random(64);
 }
-
 // Screenshake
 obj_view_follow.alarm[0] = 4;
 obj_view_follow.shake = true;

@@ -76,8 +76,8 @@
             <kind>1</kind>
             <string>if (shake) {
     // Step event
-    x = player.x + random(20) - 10;
-    y = player.y + random(20) - 10;
+    x = player.x + random(40) - 20;
+    y = player.y + random(40) - 20;
 } else {
     x = player.x;
     y = player.y;

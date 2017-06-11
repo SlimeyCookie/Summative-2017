@@ -152,50 +152,6 @@ color = make_color_rgb(0,0,255);
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="4">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string></string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="3">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string></string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="2" enumb="2">
       <action>
         <libid>1</libid>
@@ -213,9 +169,10 @@ color = make_color_rgb(0,0,255);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>canmove=true;
+            <string>///dashing
+canmove=true;
 zspeed=3;
-alarm[4] = 25;
+alarm[4] = 40;
 </string>
           </argument>
         </arguments>
@@ -238,7 +195,8 @@ alarm[4] = 25;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>move_towards_point(player.x,player.y,10);
+            <string>///wait until dash
+move_towards_point(player.x,player.y,10);
 alarm[2] = 25;
 canmove = false;
 </string>
@@ -317,7 +275,8 @@ canmove = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (!alarm[3] and alarm[2]) {
+            <string>///hurt the player
+if (!alarm[3] and alarm[2]) {
     alarm[3] = 25;
     player.hp -= dmg;
 }

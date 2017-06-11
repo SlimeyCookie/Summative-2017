@@ -32,10 +32,10 @@ image_xscale = random_range(0.33, 1);
 image_yscale = image_xscale;
 
 // Simple, move each blob in a random direction
-movDir = random(360);
+movDir = 0;
 // The is a drastic range because I'm hoping for those big streaks 
 // The low numbers will stay around the puddle, while the high numbers create quick streams
-movSpd = random_range(3, 12);
+movSpd = random_range(8, 16);
 
 // I want the blood to start out very fast, but also slow down incredibly fast
 // The overall splatter will last 2-8 frames
@@ -108,7 +108,7 @@ if (movSpd &gt; 0)
     image_alpha -= random_range(0.05, 0.1);
 
 // Slow down the blood with friction
-movSpd = movSpd*0.9-0.1;
+movSpd = movSpd*random(0.5)-1;
 
 // I decided to draw the blood to the surface here
 // This isn't really necessary, you could put this somewhere else

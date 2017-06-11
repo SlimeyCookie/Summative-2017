@@ -53,7 +53,7 @@ dmg = 25;
 with(other) {
     if (!(object_index == enemy_dog and enemy_dog.alarm[1])) {
         //repel
-        var dir = point_direction(player.x,player.y, x, y);
+        var dir = point_direction(other.x,other.y, x, y);
         
         // nudge instance to new location if possible
         
@@ -67,6 +67,10 @@ with(other) {
         alarm[0] = room_speed*0.25;
         hp -= other.dmg;
         player.cash+=1
+        // Spawn blood within an 8x8 square around the mouse cursor
+        //inst = instance_create(x, y , oBlood);
+        //inst.col = color;
+        //inst.movDir = dir;
     }
 }
 </string>
