@@ -147,6 +147,7 @@
             <kind>1</kind>
             <string>///blue
 color = make_color_rgb(0,0,255);
+originalspd = 3;
 </string>
           </argument>
         </arguments>

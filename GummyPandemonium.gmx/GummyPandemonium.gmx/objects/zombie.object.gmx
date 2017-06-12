@@ -25,35 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>hp</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>100</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>611</id>
-        <kind>6</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
             <string>zspeed</string>
           </argument>
           <argument>
             <kind>0</kind>
-            <string>1</string>
+            <string>2</string>
           </argument>
         </arguments>
       </action>
@@ -171,7 +147,32 @@
             <kind>1</kind>
             <string>///yellow
 color = make_color_rgb(255,255,0); //yellow
+originalspd = 2;
 </string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>611</id>
+        <kind>6</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>hp</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>100</string>
           </argument>
         </arguments>
       </action>
@@ -229,7 +230,7 @@ obj_view_follow.shake = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>zspeed = 2;
+            <string>zspeed = originalspd;
 canAttack = true;
 </string>
           </argument>

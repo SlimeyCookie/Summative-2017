@@ -75,9 +75,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (dmg &gt; 5) {
+            <string>if (dmg &gt; 1) {
     dmg = dmg-1.5;
     image_alpha = dmg/20;
+} else {
+    instance_destroy();
 }
 </string>
           </argument>

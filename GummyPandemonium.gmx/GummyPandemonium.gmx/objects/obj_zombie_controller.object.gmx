@@ -30,12 +30,14 @@ global.time_between_waves = room_speed*15;
 global.spawnrate = 50;
 global.startingzombies = 5;
 global.increment = 2;
-global.totalwaves = 4;
-global.ratio[0] = 75; //out of 100%
-global.ratio[1] = 25;
-global.ntypes = 2;
+global.totalwaves = 8;
+global.ratio[0] = 50; //out of 100% yellow
+global.ratio[1] = 20; // blue
+global.ratio[2] = 25; // red
+global.ratio[3] = 5; // necro
+global.ntypes = 4;
 ////////////////////////////////////////////
-programmedzombies = 2;
+programmedzombies = 4;
 ////////
 ntypes = global.ntypes;
 spawnrate = global.spawnrate
@@ -157,13 +159,19 @@ if (spwn == 0 and inwave &gt; 0) {
             c += global.ratio[i];
         }
     }
-    
+
     switch (type) {
         case 0:
             t = zombie;
             break;
         case 1:
             t = enemy_dog;
+            break;
+        case 2:
+            t = obj_shooter;
+            break;
+        case 3:
+            t = zombie_necro;
             break;
     }
     inwave--;
@@ -198,7 +206,7 @@ if (spwn == 0 and inwave &gt; 0) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_text(0,0, "Wave " + string(wavenumber) + " of " + string(global.totalwaves) + ". Enemies left in wave: " + string(inwave + instance_number(zombie)) + " of " + string(global.increment*(wavenumber-1) + global.startingzombies));
+            <string>draw_text(0,0, "Wave " + string(wavenumber) + " of " + string(global.totalwaves) + ". Gummies remaining in wave: " + string(inwave + instance_number(zombie)));
 </string>
           </argument>
         </arguments>

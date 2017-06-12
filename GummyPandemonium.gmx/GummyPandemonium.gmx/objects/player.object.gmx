@@ -454,18 +454,18 @@ if (vstick_get_xaxis(2) == 0 &amp;&amp; vstick_get_yaxis(2) == 0) {
             <kind>1</kind>
             <string>///Check out of bounds and regen
 topsize = 120;
-psize = sprite_get_width(spr_player)
-size = 60;
-if (x &gt; room_width - size){
-    x = room_width - size;
+psize = 20;
+size = 35;
+if (x + psize &gt; room_width - size){
+    x = room_width - size - psize;
 }
 
-if (x &lt; size){
-    x = size;
+if (x-psize &lt; size){
+    x = size + psize;
 }
 
-if (y &gt; room_height - size){
-    y = room_height - size;
+if (y + psize &gt; room_height-size){
+    y = room_height - size - psize;
 }
 
 if (y - psize &lt; topsize){

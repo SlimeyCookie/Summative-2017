@@ -3,7 +3,7 @@
   <spriteName>spr_necro</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-2</depth>
   <persistent>0</persistent>
   <parentName>zombie</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -29,7 +29,7 @@
           </argument>
           <argument>
             <kind>0</kind>
-            <string>100</string>
+            <string>200</string>
           </argument>
         </arguments>
       </action>
@@ -53,7 +53,7 @@
           </argument>
           <argument>
             <kind>0</kind>
-            <string>2</string>
+            <string>8</string>
           </argument>
         </arguments>
       </action>
@@ -126,6 +126,29 @@
           <argument>
             <kind>0</kind>
             <string>true</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///magenta
+color = make_color_rgb(255,0,255);
+originalspd = 8;
+</string>
           </argument>
         </arguments>
       </action>

@@ -28,6 +28,7 @@
     <sprite>sprites\spr_test</sprite>
     <sprite>sprites\spr_dog</sprite>
     <sprite>sprites\spr_blood</sprite>
+    <sprite>sprites\spr_shooter</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background2</background>
@@ -66,12 +67,14 @@
   </fonts>
   <objects name="objects">
     <object>objects\player</object>
+    <object>objects\obj_shooter</object>
     <object>objects\enemy_dog</object>
-    <object>objects\zombie_necro</object>
     <object>objects\zombie</object>
+    <object>objects\zombie_necro</object>
     <objects name="Bullets">
       <object>objects\b_pistol</object>
       <object>objects\b_pellet</object>
+      <object>objects\b_enemy_shot</object>
       <object>objects\b_sniper</object>
       <object>objects\b_machinegun</object>
       <object>objects\b_rocket</object>
