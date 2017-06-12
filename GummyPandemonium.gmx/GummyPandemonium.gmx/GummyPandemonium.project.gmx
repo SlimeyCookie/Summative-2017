@@ -26,6 +26,10 @@
     <sprite>sprites\spr_healthBar</sprite>
     <sprite>sprites\spr_necro</sprite>
     <sprite>sprites\spr_test</sprite>
+    <sprite>sprites\sprite19</sprite>
+    <sprite>sprites\sprite20</sprite>
+    <sprite>sprites\spr_title</sprite>
+    <sprite>sprites\spr_gummy</sprite>
     <sprite>sprites\spr_dog</sprite>
     <sprite>sprites\spr_blood</sprite>
     <sprite>sprites\spr_shooter</sprite>
@@ -34,6 +38,8 @@
     <background>background\background2</background>
     <background>background\background3</background>
     <background>background\background4</background>
+    <background>background\Menu</background>
+    <background>background\Menu2</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -86,12 +92,14 @@
     <object>objects\oBlood</object>
     <object>objects\playerfeet</object>
     <object>objects\obj_healthBar</object>
+    <object>objects\Start_Button</object>
+    <object>objects\Title</object>
     <object>objects\obj_view_follow</object>
     <object>objects\obj_zombie_controller</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\_display_init</room>
-    <room>rooms\rm_title</room>
+    <room>rooms\rm_menu</room>
     <room>rooms\rm_map</room>
     <room>rooms\rm_end</room>
   </rooms>
