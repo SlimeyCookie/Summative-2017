@@ -25,11 +25,59 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>knockback = 3;
+            <string>knockback = 0;
 dmg = 10;
 </string>
           </argument>
         </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="zombie">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>effect_create_above(ef_star, x, y, 0, other.color);
+with(other) {
+    if (!(object_index == enemy_dog and enemy_dog.alarm[1])) {
+    
+        hp -= other.dmg;
+        player.cash+=1
+        // Spawn blood within an 8x8 square around the mouse cursor
+        //inst = instance_create(x, y , oBlood);
+        //inst.col = color;
+        //inst.movDir = dir;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>203</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_kill_object</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
       </action>
     </event>
   </events>

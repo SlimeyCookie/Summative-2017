@@ -21,7 +21,7 @@
     <sprite>sprites\sprite7</sprite>
     <sprite>sprites\sprite8</sprite>
     <sprite>sprites\sprite9</sprite>
-    <sprite>sprites\sprite12</sprite>
+    <sprite>sprites\title</sprite>
     <sprite>sprites\bgstick</sprite>
     <sprite>sprites\spr_healthBar</sprite>
     <sprite>sprites\spr_necro</sprite>
@@ -91,9 +91,9 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\_display_init</room>
+    <room>rooms\rm_title</room>
     <room>rooms\rm_map</room>
-    <room>rooms\room3</room>
-    <room>rooms\room1</room>
+    <room>rooms\rm_end</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

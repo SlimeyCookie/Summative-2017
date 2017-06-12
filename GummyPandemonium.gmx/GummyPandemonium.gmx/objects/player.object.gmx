@@ -82,7 +82,7 @@ reloadtime[0] = 0.8*room_speed;
 reloadtime[1] = 1.2*room_speed;
 reloadtime[2] = 0.05*room_speed;
 shoot = true;
-currentgun = 1;
+currentgun = 2;
 </string>
           </argument>
         </arguments>
