@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//display properties
+            <string>randomize();
+
+//display properties
 global.ideal_width=1024;
 global.ideal_height=0;
 
@@ -41,7 +43,7 @@ if(global.ideal_width &amp; 1) {
 //setup rooms
 for(var i=1; i &lt;=room_last; i++) {
     if (room_exists(i)){
-        room_set_view(i,0,true,0,0,global.ideal_width,global.ideal_height,0,0,global.ideal_width,global.ideal_height,global.ideal_width,global.ideal_height,-1,-1,player);
+        room_set_view(i,0,true,0,0,global.ideal_width,global.ideal_height,0,0,global.ideal_width,global.ideal_height,global.ideal_width,global.ideal_height,-1,-1,obj_view_follow);
         room_set_view_enabled(i,true);
     }
 }

@@ -3,7 +3,7 @@
   <spriteName>spr_pistol</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-2</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -35,46 +35,6 @@ dmg = 25;
     <event eventtype="4" ename="zombie">
       <action>
         <libid>1</libid>
-        <id>532</id>
-        <kind>0</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_effect</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>4</kind>
-            <string>6</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>x</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>y</string>
-          </argument>
-          <argument>
-            <kind>4</kind>
-            <string>0</string>
-          </argument>
-          <argument>
-            <kind>13</kind>
-            <string>128</string>
-          </argument>
-          <argument>
-            <kind>4</kind>
-            <string>1</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
         <id>603</id>
         <kind>7</kind>
         <userelative>0</userelative>
@@ -89,22 +49,29 @@ dmg = 25;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with(other) {
-    //repel
-    var dir = point_direction(player.x,player.y, x, y);
+            <string>effect_create_above(ef_star, x, y, 0, other.color);
+with(other) {
+    if (!(object_index == enemy_dog and enemy_dog.alarm[1])) {
+        //repel
+        var dir = point_direction(other.x,other.y, x, y);
+        
+        // nudge instance to new location if possible
+        
+        var dx = lengthdir_x(other.knockback,dir);
+        var dy = lengthdir_y(other.knockback,dir);
+        
+        x += dx;
+        y += dy;
     
-    // nudge instance to new location if possible
-    
-    var dx = lengthdir_x(other.knockback,dir);
-    var dy = lengthdir_y(other.knockback,dir);
-    
-    x += dx;
-    y += dy;
-
-    zspeed = 0;
-    alarm[0] = room_speed*0.25;
-    hp -= other.dmg;
-    player.cash+=1
+        zspeed = 0;
+        alarm[0] = room_speed*0.25;
+        hp -= other.dmg;
+        player.cash+=1
+        // Spawn blood within an 8x8 square around the mouse cursor
+        //inst = instance_create(x, y , oBlood);
+        //inst.col = color;
+        //inst.movDir = dir;
+    }
 }
 </string>
           </argument>

@@ -82,7 +82,7 @@ reloadtime[0] = 0.8*room_speed;
 reloadtime[1] = 1.2*room_speed;
 reloadtime[2] = 0.05*room_speed;
 shoot = true;
-currentgun = 0;
+currentgun = 1;
 </string>
           </argument>
         </arguments>
@@ -225,10 +225,11 @@ image_speed = 0.2
             <kind>1</kind>
             <string>///set dx and dy based on currentgun
 if (currentgun == 0) {
-    dy = 40;
-    dx = 120;
+    dy = 37;
+    dx = -2;
 } else {
-
+    dy = -2;
+    dx = 37;
 }
 Len = point_distance(0, 0, dx, dy);
 Angle = point_direction(0, 0, dx, dy);
@@ -315,8 +316,6 @@ if (shoot == true) {
         reload = 0;
         if(currentgun ==0) {
             bspeed = 20;
-            dx = 0; //offset where gun is
-            dy = 0;
             
             Len = point_distance(0, 0, dx, dy);
             Angle = point_direction(0, 0, dx, dy);
@@ -330,9 +329,9 @@ if (shoot == true) {
         }
         if (currentgun == 1) {
             bspeed = 30;
-            dist=140;
-            xpos = x;// + lengthdir_x(dist, image_angle)
-            ypos = y;// + lengthdir_y(dist, image_angle)
+            dist=37;
+            xpos = x + lengthdir_x(dist, image_angle)
+            ypos = y + lengthdir_y(dist, image_angle)
             dir = point_direction(0,0,vstick_get_xaxis(1),vstick_get_yaxis(1));
             var numpellets = 20;
             for (var i = 0; i &lt; numpellets; i++) {
@@ -363,9 +362,9 @@ if (shoot == true) {
         if (currentgun == 2) {
             // Machine gun
             bspeed = 30;
-            dist=140;
-            xpos = x;// + lengthdir_x(dist, image_angle)
-            ypos = y;// + lengthdir_y(dist, image_angle)
+            dist= 37;
+            xpos = x + lengthdir_x(dist, image_angle)
+            ypos = y + lengthdir_y(dist, image_angle)
             dir = point_direction(0,0,vstick_get_xaxis(1),vstick_get_yaxis(1));
 
             var aimingiseasy = random(16)-8;
@@ -375,28 +374,6 @@ if (shoot == true) {
         }
     }
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>//x = round(x*16)/16;
-//y = round(y*16)/16;
 </string>
           </argument>
         </arguments>
@@ -476,28 +453,32 @@ if (vstick_get_xaxis(2) == 0 &amp;&amp; vstick_get_yaxis(2) == 0) {
           <argument>
             <kind>1</kind>
             <string>///Check out of bounds and regen
-topsize = 200;
-size = 60;
-if (x &gt; room_width - size){
-    x = room_width - size;
+topsize = 120;
+psize = 20;
+size = 35;
+if (x + psize &gt; room_width - size){
+    x = room_width - size - psize;
 }
 
-if (x &lt; size){
-    x = size;
+if (x-psize &lt; size){
+    x = size + psize;
 }
 
-if (y &gt; room_height - size){
-    y = room_height - size;
+if (y + psize &gt; room_height-size){
+    y = room_height - size - psize;
 }
 
-if (y &lt; topsize){
-    y = topsize;
+if (y - psize &lt; topsize){
+    y = topsize + psize;
 }
 
 //hp regen
 /*if (player.hp != 460 and outOfCombat){
     player.hp += 0.3;
 }*/
+if (player.hp &lt; 0) {
+    room_restart();
+}
 </string>
           </argument>
         </arguments>
@@ -558,6 +539,29 @@ draw_sprite(spr_healthBar,0,rx,ry);
           <argument>
             <kind>0</kind>
             <string>1</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (currentgun &gt; 2) {
+    currentgun = 0;
+}
+</string>
           </argument>
         </arguments>
       </action>

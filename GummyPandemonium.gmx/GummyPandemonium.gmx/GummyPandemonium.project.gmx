@@ -23,7 +23,6 @@
     <sprite>sprites\sprite9</sprite>
     <sprite>sprites\sprite12</sprite>
     <sprite>sprites\bgstick</sprite>
-    <sprite>sprites\sBlood</sprite>
     <sprite>sprites\spr_healthBar</sprite>
     <sprite>sprites\spr_necro</sprite>
     <sprite>sprites\spr_test</sprite>
@@ -31,6 +30,9 @@
     <sprite>sprites\sprite20</sprite>
     <sprite>sprites\spr_title</sprite>
     <sprite>sprites\spr_gummy</sprite>
+    <sprite>sprites\spr_dog</sprite>
+    <sprite>sprites\spr_blood</sprite>
+    <sprite>sprites\spr_shooter</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background2</background>
@@ -71,11 +73,14 @@
   </fonts>
   <objects name="objects">
     <object>objects\player</object>
-    <object>objects\zombie_necro</object>
+    <object>objects\obj_shooter</object>
+    <object>objects\enemy_dog</object>
     <object>objects\zombie</object>
+    <object>objects\zombie_necro</object>
     <objects name="Bullets">
       <object>objects\b_pistol</object>
       <object>objects\b_pellet</object>
+      <object>objects\b_enemy_shot</object>
       <object>objects\b_sniper</object>
       <object>objects\b_machinegun</object>
       <object>objects\b_rocket</object>
@@ -89,6 +94,8 @@
     <object>objects\obj_healthBar</object>
     <object>objects\Start_Button</object>
     <object>objects\Title</object>
+    <object>objects\obj_view_follow</object>
+    <object>objects\obj_zombie_controller</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\_display_init</room>
