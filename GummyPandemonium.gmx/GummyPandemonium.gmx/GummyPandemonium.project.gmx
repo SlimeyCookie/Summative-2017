@@ -32,6 +32,7 @@
     <background>background\background2</background>
     <background>background\background3</background>
     <background>background\background4</background>
+    <background>background\Menu</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -84,6 +85,7 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\_display_init</room>
+    <room>rooms\rm_menu</room>
     <room>rooms\rm_map</room>
     <room>rooms\room3</room>
     <room>rooms\room1</room>
