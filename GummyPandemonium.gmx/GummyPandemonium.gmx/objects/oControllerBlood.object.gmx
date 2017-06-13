@@ -28,6 +28,7 @@
             <string>/// CREATE EVENT ///
 shake = false;
 first = true;
+surf = surface_create(1,1);
 </string>
           </argument>
         </arguments>

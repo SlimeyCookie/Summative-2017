@@ -261,6 +261,10 @@
     <tile bgName="&lt;undefined&gt;" x="320" y="576" w="64" h="64" xo="320" yo="0" id="10000898" name="inst_82FE158A" depth="-1" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="&lt;undefined&gt;" x="512" y="640" w="64" h="64" xo="448" yo="64" id="10000899" name="inst_EA3D8873" depth="-1" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="&lt;undefined&gt;" x="320" y="640" w="64" h="64" xo="320" yo="64" id="10000900" name="inst_A184B81B" depth="-1" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="background4" x="320" y="1600" w="64" h="64" xo="1024" yo="512" id="10000902" name="inst_CBA76440" depth="-1" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="background4" x="256" y="1600" w="64" h="64" xo="960" yo="512" id="10000903" name="inst_56AD4B12" depth="-1" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="background4" x="320" y="1664" w="64" h="64" xo="1024" yo="576" id="10000904" name="inst_7D6E40AD" depth="-1" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="background4" x="256" y="1664" w="64" h="64" xo="960" yo="576" id="10000905" name="inst_E63438CC" depth="-1" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
   </tiles>
   <PhysicsWorld>0</PhysicsWorld>
   <PhysicsWorldTop>0</PhysicsWorldTop>

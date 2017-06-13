@@ -3,6 +3,7 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
+  <datafiles number="2" name="datafiles"/>
   <NewExtensions>
     <extension index="0">extensions\Virtual Joysticks</extension>
   </NewExtensions>
@@ -32,7 +33,19 @@
     <sprite>sprites\spr_gummy</sprite>
     <sprite>sprites\spr_dog</sprite>
     <sprite>sprites\spr_blood</sprite>
+    <sprite>sprites\spr_hulk</sprite>
     <sprite>sprites\spr_shooter</sprite>
+    <sprite>sprites\sprite25</sprite>
+    <sprite>sprites\spr_bonbon</sprite>
+    <sprite>sprites\spr_gunholder</sprite>
+    <sprite>sprites\spr_selected</sprite>
+    <sprite>sprites\spr_shotgun</sprite>
+    <sprite>sprites\spr_rocketlauncher</sprite>
+    <sprite>sprites\spr_machinegun</sprite>
+    <sprite>sprites\spr_pistol_shop</sprite>
+    <sprite>sprites\spr_go</sprite>
+    <sprite>sprites\spr_rocketshot</sprite>
+    <sprite>sprites\spr_boom</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background2</background>
@@ -40,6 +53,7 @@
     <background>background\background4</background>
     <background>background\Menu</background>
     <background>background\Menu2</background>
+    <background>background\background5</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -67,41 +81,54 @@
       <script>scripts\vstick_step.gml</script>
       <script>scripts\vstick_init.gml</script>
     </scripts>
+    <script>scripts\save.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font0</font>
+    <font>fonts\ft_pixel</font>
+    <font>fonts\ft_pixelbig</font>
   </fonts>
   <objects name="objects">
     <object>objects\player</object>
     <object>objects\obj_shooter</object>
+    <object>objects\obj_tank</object>
     <object>objects\enemy_dog</object>
     <object>objects\zombie</object>
     <object>objects\zombie_necro</object>
     <objects name="Bullets">
       <object>objects\b_pistol</object>
       <object>objects\b_pellet</object>
+      <object>objects\b_rocket</object>
       <object>objects\b_enemy_shot</object>
       <object>objects\b_sniper</object>
       <object>objects\b_machinegun</object>
-      <object>objects\b_rocket</object>
       <object>objects\b_spraymachinegun</object>
     </objects>
-    <object>objects\obj_next</object>
     <object>objects\obj_display_manager</object>
     <object>objects\oControllerBlood</object>
     <object>objects\oBlood</object>
     <object>objects\playerfeet</object>
     <object>objects\obj_healthBar</object>
-    <object>objects\Start_Button</object>
-    <object>objects\Title</object>
+    <object>objects\obj_title</object>
     <object>objects\obj_view_follow</object>
     <object>objects\obj_zombie_controller</object>
+    <object>objects\obj_startbutton</object>
+    <object>objects\obj_decor_gummy</object>
+    <object>objects\par_shopgun</object>
+    <object>objects\obj_shotgun_shop</object>
+    <object>objects\obj_rocket_shop</object>
+    <object>objects\obj_machinegun_shop</object>
+    <object>objects\obj_pistol_shop</object>
+    <object>objects\shop_controller</object>
+    <object>objects\obj_go</object>
+    <object>objects\obj_boom</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\_display_init</room>
     <room>rooms\rm_menu</room>
-    <room>rooms\rm_map</room>
+    <room>rooms\rm_shop</room>
     <room>rooms\rm_end</room>
+    <room>rooms\rm_map</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

@@ -52,7 +52,27 @@ surface_resize(application_surface,global.ideal_width,global.ideal_height);
 window_set_size(global.ideal_width,global.ideal_height);
 display_set_gui_size(global.ideal_width,global.ideal_height);
 
-room_goto(room_next(room));
+// Load
+ini_open("saveload.ini");
+if ini_read_real("vars","new",0) == 0 { // blank
+    global.candy = 0;
+    global.level = 1;
+    global.shotgun = 0;
+    global.machinegun = 0;
+    global.rocketlauncher = 0;
+    ini_close();
+    save();
+} else {
+    global.candy = ini_read_real("vars", "candy", 0);
+    global.level = ini_read_real("vars", "level", 1);
+    global.shotgun = ini_read_real("vars", "shotgun", 0);
+    global.machinegun = ini_read_real("vars", "machinegun", 0);
+    global.rocketlauncher = ini_read_real("vars", "rocketlauncher", 0);
+    ini_close();
+    
+}
+global.selectedgun = 0;
+room_goto(rm_menu);
 </string>
           </argument>
         </arguments>

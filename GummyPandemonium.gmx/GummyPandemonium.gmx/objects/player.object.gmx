@@ -81,8 +81,9 @@ vstick_set_backsprite(2,bgstick);
 reloadtime[0] = 0.8*room_speed;
 reloadtime[1] = 1.2*room_speed;
 reloadtime[2] = 0.05*room_speed;
+reloadtime[3] = 2.5*room_speed;
 shoot = true;
-currentgun = 2;
+currentgun = global.selectedgun;
 </string>
           </argument>
         </arguments>
@@ -179,7 +180,7 @@ image_speed = 0.2
           </argument>
           <argument>
             <kind>0</kind>
-            <string>100</string>
+            <string>200</string>
           </argument>
         </arguments>
       </action>
@@ -224,15 +225,12 @@ image_speed = 0.2
           <argument>
             <kind>1</kind>
             <string>///set dx and dy based on currentgun
-if (currentgun == 0) {
-    dy = 37;
-    dx = -2;
-} else {
-    dy = -2;
-    dx = 37;
-}
+dy = -2;
+dx = 37;
+
 Len = point_distance(0, 0, dx, dy);
 Angle = point_direction(0, 0, dx, dy);
+a = false;
 </string>
           </argument>
         </arguments>
@@ -372,6 +370,20 @@ if (shoot == true) {
             b.speed = bspeed;
             b.direction = dir+aimingiseasy;
         }
+        if (currentgun == 3) {
+            //rocket
+            bspeed = 20;
+            
+            Len = point_distance(0, 0, dx, dy);
+            Angle = point_direction(0, 0, dx, dy);
+            // or, in case you want to use other program to calculate it, you can use:
+            // Len = sqrt(sqr(DX) + sqr(DY));
+            // Angle = radtodeg(arctan2(-DY, DX));
+                        
+            bullet_id = instance_create(x + lengthdir_x(Len, Angle+image_angle), y + lengthdir_y(Len, Angle+image_angle), b_rocket);
+            bullet_id.direction = image_angle;
+            bullet_id.speed = bspeed;
+        }
     }
 }
 </string>
@@ -472,12 +484,8 @@ if (y - psize &lt; topsize){
     y = topsize + psize;
 }
 
-//hp regen
-/*if (player.hp != 460 and outOfCombat){
-    player.hp += 0.3;
-}*/
-if (player.hp &lt; 0) {
-    room_restart();
+if (player.hp &lt;= 0) {
+    room_goto(rm_shop);
 }
 </string>
           </argument>
@@ -506,61 +514,12 @@ vstick_draw(2);
 draw_set_colour(c_red);
 ry = display_get_gui_height()-sprite_get_height(spr_healthBar);
 rx = display_get_gui_width()/2-sprite_get_width(spr_healthBar)/2;
-draw_rectangle(rx, ry, rx + (sprite_get_width(spr_healthBar) * (hp/100))-1, ry + sprite_get_height(spr_healthBar),false);
+draw_rectangle(rx, ry, rx + (sprite_get_width(spr_healthBar) * (hp/200))-1, ry + sprite_get_height(spr_healthBar),false);
 //draw_sprite(hpborder,0,display_get_gui_width()/2-sprite_get_width(hpbar)/2,display_get_gui_height()-ssize/2-sprite_get_height(hpbar)+50);
 draw_sprite(spr_healthBar,0,rx,ry);
 
 
 
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="81">
-      <action>
-        <libid>1</libid>
-        <id>611</id>
-        <kind>6</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>-1</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>currentgun</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>1</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if (currentgun &gt; 2) {
-    currentgun = 0;
-}
 </string>
           </argument>
         </arguments>
