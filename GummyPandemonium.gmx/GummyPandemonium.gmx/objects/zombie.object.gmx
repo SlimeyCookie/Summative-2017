@@ -474,9 +474,6 @@ if (canAttack) {
     
 }
 
-if (player.hp &lt; 0){
-    game_end();
-}
 </string>
           </argument>
         </arguments>

@@ -57,9 +57,6 @@
             <kind>1</kind>
             <string>player.hp -= 20;
 
-if (player.hp &lt; 0){
-    game_end();
-}
 instance_destroy();
 </string>
           </argument>
